@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Application Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+  <div class="form-container mx-auto col-md-8">
+    <h2 class="text-center mb-4 text-shadow">Application Form <span class="badge text-bg-primary">Job Seeker</span></h2>
+    <form id="applicationForm" class="needs-validation" novalidate>
+      <div class="row mb-3">
+        <div class="col-md-6 position-relative">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="firstName" required pattern="[A-Za-z\s]+" />
+          <div class="valid-tooltip">Looks good!</div>
+          <div class="invalid-tooltip">Please enter a valid first name.</div>
+        </div>
+        <div class="col-md-6 position-relative">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lastName" required pattern="[A-Za-z\s]+" />
+          <div class="valid-tooltip">Looks good!</div>
+          <div class="invalid-tooltip">Please enter a valid last name.</div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6 position-relative">
+          <label for="dob" class="form-label">Date of Birth</label>
+          <input type="date" class="form-control" id="dob" required />
+          <div class="valid-tooltip">Looks good!</div>
+          <div class="invalid-tooltip">Please select your date of birth.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" class="form-control" id="age" readonly />
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6 position-relative">
+          <label for="gender" class="form-label">Gender</label>
+          <select class="form-select" id="gender" required>
+            <option selected disabled value="">Choose...</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+          <div class="valid-tooltip">Looks good!</div>
+          <div class="invalid-tooltip">Please select your gender.</div>
+        </div>
+        <div class="col-md-6 position-relative">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" required />
+          <div class="valid-tooltip">Looks good!</div>
+          <div class="invalid-tooltip">Enter a valid email address.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Positions Available</label><br />
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="position" id="juniorDeveloper" value="Junior Developer" required />
+          <label class="form-check-label" for="juniorDeveloper">Junior Developer</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="position" id="midLevelDeveloper" value="Mid-level Developer" />
+          <label class="form-check-label" for="midLevelDeveloper">Mid-level Developer</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="position" id="seniorDeveloper" value="Senior Developer" />
+          <label class="form-check-label" for="seniorDeveloper">Senior Developer</label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Programming Languages</label><br />
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" value="Java" id="java" />
+          <label class="form-check-label" for="java">Java</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" value="JavaScript" id="javascript" />
+          <label class="form-check-label" for="javascript">JavaScript</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" value="Python" id="python" />
+          <label class="form-check-label" for="python">Python</label>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6 position-relative">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" required minlength="6" />
+          <div class="valid-tooltip">Looks good!</div>
+          <div class="invalid-tooltip">Password must be at least 6 characters.</div>
+        </div>
+        <div class="col-md-6 position-relative">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPassword" required />
+          <div class="valid-tooltip">Passwords match!</div>
+          <div class="invalid-tooltip">Passwords must match.</div>
+          <small class="form-text text-muted">Make sure both passwords match.</small>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-bs-title="Save data">Submit</button>
+        <button type="reset" class="btn btn-secondary ms-2" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-bs-title="Change data" onreset="return confirm('Really erase ALL input and start over?')">Reset</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="tableContainer" class="mt-5"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
